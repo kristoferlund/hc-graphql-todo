@@ -2,7 +2,7 @@
 
 This app was built to test integrating Holochain with the [Juniper GraphQL](https://github.com/graphql-rust/juniper) server library for Rust.
 
-![ezgif-3-5ce67df70477](https://user-images.githubusercontent.com/9698363/104827107-bca28300-585a-11eb-8f9f-b14e368de87c.gif)
+![vid](https://user-images.githubusercontent.com/9698363/104827134-04c1a580-585b-11eb-90be-2e25a06836be.gif)
 
 #### DNA
 
