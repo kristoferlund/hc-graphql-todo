@@ -17,7 +17,6 @@ export default function AddItem(props) {
 
   React.useEffect(() => {
     if (!loading) {
-      debugger;
       textInput.current.focus();
     }
   }, [loading]);
