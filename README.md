@@ -2,6 +2,8 @@
 
 This app was built to test integrating Holochain with the [Juniper GraphQL](https://github.com/graphql-rust/juniper) server library for Rust.
 
+![ezgif-3-5ce67df70477](https://user-images.githubusercontent.com/9698363/104827107-bca28300-585a-11eb-8f9f-b14e368de87c.gif)
+
 #### DNA
 
 The DNA accepts queries on a single endpoint: `graphql`. See the [schema.graphql](./dna/schema.graphql) for available queries/mutations.
