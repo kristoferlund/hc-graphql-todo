@@ -1,0 +1,89 @@
+type ItemConnection {
+  edges: [ItemEdge!]!
+  pageInfo: PageInfo!
+}
+
+type Mutation {
+  createList(input: CreateListInput!): CrudListPayload!
+  createItem(input: CreateItemInput!): CrudItemPayload!
+  updateItem(input: UpdateItemInput!): CrudItemPayload!
+  toggleItemDone(input: ToggleItemDoneInput!): CrudItemPayload!
+  deleteItem(input: DeleteItemInput!): CrudItemPayload!
+}
+
+input CreateItemInput {
+  listId: ID!
+  description: String!
+}
+
+input UpdateItemInput {
+  id: ID!
+  description: String!
+  done: Boolean!
+}
+
+type Query {
+  apiVersion: String!
+  list(id: ID!): List!
+  lists: ListConnection!
+  item(id: ID!): Item!
+  items(id: ID!): ItemConnection!
+  node(id: ID!): Node!
+}
+
+input ToggleItemDoneInput {
+  id: ID!
+}
+
+type Item implements Node {
+  id: ID!
+  description: String!
+  done: Boolean!
+}
+
+type ItemEdge {
+  cursor: String!
+  node: Item!
+}
+
+input CreateListInput {
+  name: String!
+}
+
+type CrudListPayload {
+  listEdge: ListEdge!
+}
+
+type ListConnection {
+  edges: [ListEdge!]!
+  pageInfo: PageInfo!
+}
+
+type ListEdge {
+  cursor: String!
+  node: List!
+}
+
+interface Node {
+  id: ID!
+}
+
+input DeleteItemInput {
+  id: ID!
+}
+
+type List implements Node {
+  id: ID!
+  name: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String!
+  endCursor: String!
+}
+
+type CrudItemPayload {
+  item: Item!
+}

@@ -1,0 +1,21 @@
+{
+  "name": "schema",
+  "version": "0.0.0",
+  "description": "Generate schema.graphql ",
+  "main": "index.ts",
+  "scripts": {
+    "generate": "CARGO_TARGET_DIR=../target cargo build --release --target wasm32-unknown-unknown && dna-util -c ../todo.dna.workdir && TRYORAMA_LOG_LEVEL=info RUST_LOG=none RUST_BACKTRACE=1 TRYORAMA_HOLOCHAIN_PATH=\"holochain\" ts-node src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/client": "^3.3.6",
+    "@holochain/tryorama": "0.4.0-dev.1",
+    "@types/node": "^14.14.19",
+    "apollo-link-context": "^1.0.20",
+    "graphql": "^15.4.0",
+    "tape": "^5.0.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6"
+  }
+}

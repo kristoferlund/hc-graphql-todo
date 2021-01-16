@@ -1,0 +1,10 @@
+{
+  "name": "todo",
+  "uuid": "",
+  "properties": null,
+  "zomes": {
+    "todo": {
+      "wasm_path": "../target/wasm32-unknown-unknown/release/todo.wasm"
+    }
+  }
+}

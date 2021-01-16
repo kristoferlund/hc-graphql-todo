@@ -1,0 +1,16 @@
+[workspace]
+members = [
+  "zomes/todo",
+]
+
+[profile.dev]
+opt-level = "z"
+
+[profile.release]
+opt-level = "z"
+
+[patch.crates-io]
+hc_utils = {git = "https://github.com/holochain/hc-utils", rev = "cddc40c4ae4cbabe0c3c0e021dba612065ca75e9", package = "hc_utils"}
+hdk3 = {git = "https://github.com/holochain/holochain", rev = "ea8d62a4c6796769c6a6dcc0a23c94747efb5967", package = "hdk3"}
+holo_hash = {git = "https://github.com/holochain/holochain", rev = "ea8d62a4c6796769c6a6dcc0a23c94747efb5967", package = "holo_hash"}
+
