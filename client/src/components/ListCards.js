@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
@@ -9,6 +10,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { List as ListIcon } from "@material-ui/icons";
 import ButtonBase from "@material-ui/core/ButtonBase";
+
+import { LIST_ITEMS_QUERY } from "../graphql/queries";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -29,6 +32,10 @@ let ListCard = (props) => {
   const classes = useStyles();
   const history = useHistory();
 
+  const { data } = useQuery(LIST_ITEMS_QUERY, {
+    variables: { id: list.id },
+  });
+
   return (
     <Card className={classes.card}>
       <ButtonBase
@@ -42,7 +49,9 @@ let ListCard = (props) => {
           <Typography variant="h5" component="h2">
             {list.name}
           </Typography>
-          <Typography color="textSecondary">23 Tasks</Typography>
+          <Typography color="textSecondary">
+            {data ? data.items.edges.length : "…"} Tasks
+          </Typography>
         </CardContent>
       </ButtonBase>
     </Card>
