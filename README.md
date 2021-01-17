@@ -1,6 +1,6 @@
 # Holochain / GraphQL Todo Sample
 
-This app was built to test integrating Holochain with the [Juniper GraphQL](https://github.com/graphql-rust/juniper) server library for Rust. Conclusion: It works great! No obvious performance loss or excessive memory consumption, even though that would have to be investigated more in detail. Juniper adds only ca 150 K to the final size of compiled DNA. Client development becomes really straightforward when Holochain can be acessed as a GraphQL endpoint. 
+This app was built to test integrating [Holochain](https://holochain.org/) with the [Juniper GraphQL](https://github.com/graphql-rust/juniper) server library for Rust. Conclusion: It works great! No obvious performance loss or excessive memory consumption, even though that would have to be investigated more in detail. Juniper adds only ca 150 K to the final size of compiled DNA. Client development becomes really straightforward when Holochain can be acessed as a GraphQL endpoint. 
 
 ![vid](https://user-images.githubusercontent.com/9698363/104852924-adc0dc80-58fd-11eb-827c-eaa5fcb906ec.gif)
 
