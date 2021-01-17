@@ -33,30 +33,12 @@ pub fn list_entry_hash(id: juniper::ID) -> FieldResult<EntryHash> {
 
 pub fn lists() -> FieldResult<ListConnection> {
 
-    // let app_type = AppEntryType::new(
-    //     EntryDefIndex::from(0),
-    //     ZomeId::from(0),
-    //     EntryVisibility::Public,
-    //  );
-    //  let entry_type = EntryType::App(app_type);
-    // let inmail_query_args = ChainQueryFilter::default()
-    //    .include_entries(true)
-    //    .header_type(HeaderType::Create)
-    //    .entry_type(entry_type);
-    // let maybe_inmails = query(inmail_query_args)?;
-    // for sds in maybe_inmails.0 {
-    //     debug!("\n\n\n ELEMENT  {:?} \n\n\n", sds);
-
-    // }
-
     let agent_info = agent_info()?;
     let agent_address: AnyDhtHash = agent_info.agent_initial_pubkey.clone().into();
 
     let list_links = get_links(agent_address.into(), Some(utils::link_tag("list")?))?
         .into_inner()
         .into_iter();
-
-    debug!("\n\n\n ************ LIST LENGTH {:?}\n\n\n", list_links.clone().len());
 
     let mut edges = Vec::with_capacity(list_links.len());
 
